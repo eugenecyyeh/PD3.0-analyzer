@@ -1,5 +1,3 @@
-USB PD3.0 Analyzer
-
 This is a modified version from the extension of [USB PD(Biphase Mark Code)](https://github.com/saleae/hla-usb-pd) on the Saleae store. Code structure and most variants come from there since I'm not a software guy. 
 
 This extension fixed some problems I met on debugging:
