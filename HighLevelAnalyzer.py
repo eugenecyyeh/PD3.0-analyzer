@@ -415,9 +415,10 @@ class Hla(HighLevelAnalyzer):
                     data_object_type = frame_type
                     data_object_data['index'] = object_index
                     data_object_data['raw'] = hex(object_int)
-                    VDO_header_command = data_object_data['command']
-                    VDO_header_command_type = data_object_data['command_type']
-                    SVID = data_object_data['vendor_id']
+                    if data_object_type == 'structured_header_vdo':
+                        VDO_header_command = data_object_data['command']
+                        VDO_header_command_type = data_object_data['command_type']
+                        SVID = data_object_data['vendor_id']
                 elif VDO_header_command == 'Discover Identity' and VDO_header_command_type == 'ACK':
                     if object_index == 2:
                         frame_type, data_object_data = decode_id_header_data_object(
